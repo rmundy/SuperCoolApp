@@ -40,6 +40,7 @@ Thumbs.db
 *.dotCover
 
 # compiled output
+SuperCoolApp/wwwroot
 angular/dist
 angular/tmp
 angular/out-tsc
