@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace SuperCoolApp
 {
@@ -14,6 +15,11 @@ namespace SuperCoolApp
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.RollingFile("../logs/log-{Date}.txt")
+                .CreateLogger();
+                
             BuildWebHost(args).Run();
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace SuperCoolApp.Controllers
 {
@@ -13,7 +14,12 @@ namespace SuperCoolApp.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var listOfValues = new List<string>();
+            listOfValues.Add("Hello");
+            listOfValues.Add("World");
+
+            Log.Information("Get called and will return {@listOfValues}", listOfValues);
+            return listOfValues;
         }
     }
 }

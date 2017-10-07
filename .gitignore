@@ -76,3 +76,5 @@ angular/typings
 # e2e
 angular/e2e/*.js
 angular/e2e/*.map
+
+logs
